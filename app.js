@@ -63,11 +63,17 @@ app.post("/checkname", async (req, res) => {
   }
 });
 
-app.use("/react", express.static(path.join(__dirname, "dist")));
+app.use("/react", express.static(path.join(__dirname, "Redist")));
 console.log(path.join(__dirname, "dist"));
 
 app.use("/react/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "Redist", "index.html"));
+});
+
+app.use("/", express.static(path.join(__dirname, "Andist")));
+
+app.use("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "Andist", "index.html"));
 });
 
 io.use((socket, next) => {
