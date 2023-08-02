@@ -47,7 +47,7 @@ app.post("/adduser", async (req, res) => {
 
 (async () => {
   // await Message.sync({ force: true });
-  //await User.sync({ force: true });
+  // await User.sync({ force: true });
 })();
 
 app.post("/checkname", async (req, res) => {
